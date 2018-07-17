@@ -16,13 +16,16 @@ app.get('/', function(req, res) {
 app.get('/dynamic-app', function(req, res){
   res.render('dynamic-app', {
     name: "Sign In",
-    url: "http://www.google.com",
-    url2: "/auth/google"
+    LogIn: "http://www.google.com",
+    LogIn2: "/auth/google"
   });
 });
 
 app.get('/auth/google', function(req, res) {
-  res.render('auth/google');
+  res.render('auth/google', {
+    name: "Pawel",
+    email: "https://www.google.com/intl/pl/gmail/about/"
+  });
 });
 
 app.listen(3000);
